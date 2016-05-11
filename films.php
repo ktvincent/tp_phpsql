@@ -1,5 +1,12 @@
+
+
+
 <!DOCTYPE html>
 <html>
+  <!-- Il faut que tu commit à chaque fois que tu reussi une partie -->
+  <!-- exo1: clarté: 2/4 fonctionnement: 4/4 -->
+  <!-- exo2: clarté: 2.5/4 fonctionnement: 1.5/4 artistique: 1/1 -->
+  <!-- exo3: 0/4 -->
 	<body> 
   
     <h1>
@@ -17,7 +24,7 @@
           $liste = mysqli_query($conn,"SELECT DISTINCT nom
                                     FROM Artiste");
           while($artiste=mysqli_fetch_assoc($liste)){
-            echo "<OPTION>".$artiste['nom'];
+            echo "<OPTION>".$artiste['nom']; // manque </option>
           }
  
         ?>
@@ -38,7 +45,7 @@
     
     <?php
       
-       $link = mysqli_connect("dwarves.iut-fbleau.fr","kwan-tea","CUDDZA1662","kwan-tea")
+       $link = mysqli_connect("dwarves.iut-fbleau.fr","kwan-tea","CUDDZA1662","kwan-tea") // pas besoin de se connecter 2 fois
        or die("Impossible");
       
        $resultat= mysqli_query($link,"SELECT titre,annee,genre,nom
@@ -46,6 +53,7 @@
                                     WHERE idMes = idArtiste");
      if($resultat){
         while($ligne= mysqli_fetch_assoc($resultat)){
+        //manque une condition pour prendre seulement le realisateur en question pour l'exo 2
         echo "<tr>";
         echo "<td>".$ligne['titre']."</td>";
         echo "<td>".$ligne['annee']."</td>";
@@ -54,7 +62,7 @@
         echo "</tr>";
         }
     }
-      
+     //manque la deconnexion
     ?>
       
       
