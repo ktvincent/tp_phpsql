@@ -11,7 +11,7 @@
              $prenomA = $_GET['prenomA'];
              $anneeA = $_GET['anneeA'];
      
-						  echo "L'artiste ".$nomA." a ete ajoute avec succes!";
+						  echo "L'artiste ".$prenomA." ".$nomA." a ete ajoute avec succes!";
 		}
   
     echo"</fieldset>";
